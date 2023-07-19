@@ -92,3 +92,8 @@ enjoy, open `http://localhost7860` or `http://ip:7860` and play with the LLaMA2!
 ![](.github/preview.png)
 
 ![](.github/clip.gif)
+
+## Credit
+
+1. Meta LLaMA2: https://ai.meta.com/llama/
+2. Meta LLaMA2 7B/13B Chat: https://huggingface.co/meta-llama/Llama-2-7b-chat , https://huggingface.co/meta-llama/Llama-2-7b-chat
