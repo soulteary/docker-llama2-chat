@@ -1,10 +1,10 @@
-# Docker Llama2 Chat
+# Docker LLaMA2 Chat
 
-Play! Together!
+Play! Together! **ONLY 3 STEPS!**
 
 ## Usage
 
-1. Build llama2 Docker image for 7B or 13B:
+1. Build LLaMA2 Docker image for 7B or 13B:
 
 ```bash
 # 7b
@@ -13,17 +13,7 @@ bash scripts/make-7b.sh
 bash scripts/make-13b.sh
 ```
 
-
-
-2. Build 7B or 13B Docker image.
-
-```bash
-docker build -t soulteary/llama2:7b . -f docker/Dockerfile.7b
-# or
-docker build -t soulteary/llama2:7b . -f docker/Dockerfile.13b
-```
-
-3. Download Llama2 Offcial Models from HuggingFace (download faster++)
+2. Download LLaMA2 Offcial Models from HuggingFace (download faster++)
 
 ```bash
 git clone git@hf.co:meta-llama/Llama-2-7b-chat-hf
@@ -81,17 +71,16 @@ meta-llama
 4 directories, 35 files
 ```
 
-4. Run llama2 7b or 13b in docker command:
+3. Run llama2 7b or 13b in docker command:
 
 ```bash
-docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 --rm -it -v `pwd`/meta-llama:/app/meta-llama -p 7860:7860 soulteary/llama2:7b
-
-# or
-
-docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 --rm -it -v `pwd`/meta-llama:/app/meta-llama -p 7860:7860 soulteary/llama2:13b
+# 7b
+bash scripts/make-7b.sh
+# or 13b
+bash scripts/make-13b.sh
 ```
 
-5. enjoy
+enjoy, open `http://localhost7860` or `http://ip:7860` and play with the LLaMA2!
 
-open `http://localhost7860` or `http://ip:7860`.
+
 
