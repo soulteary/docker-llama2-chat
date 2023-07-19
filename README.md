@@ -91,4 +91,4 @@ enjoy, open `http://localhost7860` or `http://ip:7860` and play with the LLaMA2!
 
 ![](.github/preview.png)
 
-![](.github/clip.png)
+![](.github/clip.gif)
