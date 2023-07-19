@@ -2,6 +2,10 @@
 
 Play! Together! **ONLY 3 STEPS!**
 
+Get started quickly, locally using the 7B or 13B models, using Docker.
+
+This project has been tested by 4090 and costs 8 ~ 14G vRAM.
+
 ## Usage
 
 1. Build LLaMA2 Docker image for 7B or 13B:
@@ -83,4 +87,8 @@ bash scripts/make-13b.sh
 enjoy, open `http://localhost7860` or `http://ip:7860` and play with the LLaMA2!
 
 
+## Preview
 
+![](.github/preview.png)
+
+![](.github/clip.png)
