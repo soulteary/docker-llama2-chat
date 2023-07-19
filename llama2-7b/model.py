@@ -5,12 +5,11 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, TextIteratorStreamer
 
 model_id = 'meta-llama/Llama-2-7b-chat-hf'
-cache_dir = '/data/'
 
 if torch.cuda.is_available():
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
-        cache_dir=cache_dir, local_files_only=True,
+        local_files_only=True,
         torch_dtype=torch.float16,
         device_map='auto'
     )

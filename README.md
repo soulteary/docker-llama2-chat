@@ -4,26 +4,94 @@ Play! Together!
 
 ## Usage
 
-1. Build base Docker image.
+1. Build llama2 Docker image for 7B or 13B:
 
 ```bash
-docker build -t soulteary/llama2:base .
+# 7b
+bash scripts/make-7b.sh
+# 13b
+bash scripts/make-13b.sh
 ```
 
-Wait for the image to be built.
+
+
+2. Build 7B or 13B Docker image.
 
 ```bash
-[+] Building 47.5s (7/7) FINISHED                                                                                                                                                                     
- => [internal] load .dockerignore                                                                                                                                                                0.1s
- => => transferring context: 2B                                                                                                                                                                  0.0s
- => [internal] load build definition from Dockerfile                                                                                                                                             0.1s
- => => transferring dockerfile: 317B                                                                                                                                                             0.0s
- => [internal] load metadata for nvcr.io/nvidia/pytorch:23.06-py3                                                                                                                                0.0s
- => CACHED [1/3] FROM nvcr.io/nvidia/pytorch:23.06-py3                                                                                                                                           0.0s
- => [2/3] RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple &&     pip install accelerate==0.21.0 bitsandbytes==0.40.2 gradio==3.37.0 protobuf==3.20.3 scipy==1.11.  45.2s
- => [3/3] WORKDIR /app                                                                                                                                                                           0.1s
- => exporting to image                                                                                                                                                                           2.1s 
- => => exporting layers                                                                                                                                                                          2.1s 
- => => writing image sha256:24561b68d8db2fa63f0c0a7d1bfd4a5aea62ed6d30d30ffcb7d7ae99a5180d0f                                                                                                     0.0s 
- => => naming to docker.io/soulteary/llama2:base 
+docker build -t soulteary/llama2:7b . -f docker/Dockerfile.7b
+# or
+docker build -t soulteary/llama2:7b . -f docker/Dockerfile.13b
 ```
+
+3. Download Llama2 Offcial Models from HuggingFace (download faster++)
+
+```bash
+git clone git@hf.co:meta-llama/Llama-2-7b-chat-hf
+git clone git@hf.co:meta-llama/Llama-2-13b-chat-hf
+
+mkdir meta-llama
+mv Llama-2-7b-chat-hf meta-llama/
+mv Llama-2-13b-chat-hf meta-llama/
+```
+
+keep the correct directory structure.
+
+```bash
+tree -L 2 meta-llama
+meta-llama
+├── Llama-2-13b-chat-hf
+│   ├── added_tokens.json
+│   ├── config.json
+│   ├── generation_config.json
+│   ├── LICENSE.txt
+│   ├── model-00001-of-00003.safetensors
+│   ├── model-00002-of-00003.safetensors
+│   ├── model-00003-of-00003.safetensors
+│   ├── model.safetensors.index.json
+│   ├── pytorch_model-00001-of-00003.bin
+│   ├── pytorch_model-00002-of-00003.bin
+│   ├── pytorch_model-00003-of-00003.bin
+│   ├── pytorch_model.bin.index.json
+│   ├── README.md
+│   ├── Responsible-Use-Guide.pdf
+│   ├── special_tokens_map.json
+│   ├── tokenizer_config.json
+│   ├── tokenizer.model
+│   └── USE_POLICY.md
+└── Llama-2-7b-chat-hf
+    ├── added_tokens.json
+    ├── config.json
+    ├── generation_config.json
+    ├── LICENSE.txt
+    ├── model-00001-of-00002.safetensors
+    ├── model-00002-of-00002.safetensors
+    ├── model.safetensors.index.json
+    ├── models--meta-llama--Llama-2-7b-chat-hf
+    ├── pytorch_model-00001-of-00003.bin
+    ├── pytorch_model-00002-of-00003.bin
+    ├── pytorch_model-00003-of-00003.bin
+    ├── pytorch_model.bin.index.json
+    ├── README.md
+    ├── special_tokens_map.json
+    ├── tokenizer_config.json
+    ├── tokenizer.json
+    ├── tokenizer.model
+    └── USE_POLICY.md
+
+4 directories, 35 files
+```
+
+4. Run llama2 7b or 13b in docker command:
+
+```bash
+docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 --rm -it -v `pwd`/meta-llama:/app/meta-llama -p 7860:7860 soulteary/llama2:7b
+
+# or
+
+docker run --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 --rm -it -v `pwd`/meta-llama:/app/meta-llama -p 7860:7860 soulteary/llama2:13b
+```
+
+5. enjoy
+
+open `http://localhost7860` or `http://ip:7860`.
+
