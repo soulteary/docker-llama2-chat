@@ -1,5 +1,7 @@
 # Docker LLaMA2 Chat
 
+![](.github/llama2.jpg)
+
 Play! Together! **ONLY 3 STEPS!**
 
 Get started quickly, locally using the 7B or 13B models, using Docker.
