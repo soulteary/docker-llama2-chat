@@ -79,9 +79,9 @@ meta-llama
 
 ```bash
 # 7b
-bash scripts/make-7b.sh
+bash scripts/run-7b.sh
 # or 13b
-bash scripts/make-13b.sh
+bash scripts/run-13b.sh
 ```
 
 enjoy, open `http://localhost7860` or `http://ip:7860` and play with the LLaMA2!
