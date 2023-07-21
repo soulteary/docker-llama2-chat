@@ -16,18 +16,15 @@ DEFAULT_MAX_NEW_TOKENS = 1024
 DESCRIPTION = """
 # Llama-2 7B Chat (Chinese)
 
-This Space demonstrates model [Llama-2-7b-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat) by Meta, a Llama 2 model with 7B parameters fine-tuned for chat instructions. Feel free to play with it, or duplicate to run generations without a queue! If you want to run your own service, you can also [deploy the model on Inference Endpoints](https://huggingface.co/inference-endpoints).
+本空间是对于 [Chinese-Llama-2-7b](https://huggingface.co/LinkSoul/Chinese-Llama-2-7b) 模型的演示。该模型由 LinkSoul 开发，基于 Llama 2 基础模型和自行收集的大规模中英文指令数据集 [instruction_merge_set](https://huggingface.co/datasets/LinkSoul/instruction_merge_set) 训练得到。
 
-🔎 For more details about the Llama 2 family of models and how to use them with `transformers`, take a look [at our blog post](https://huggingface.co/blog/llama2).
-
-🔨 Looking for an even more powerful model? Check out the [13B version](https://huggingface.co/spaces/huggingface-projects/llama-2-13b-chat) or the large [70B model demo](https://huggingface.co/spaces/ysharma/Explore_llamav2_with_TGI).
 """
 
 LICENSE = """
 <p/>
 
 ---
-As a derivate work of [Llama-2-7b-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat) by Meta,
+As a derivate work of [Chinese-Llama-2-7b](https://huggingface.co/LinkSoul/Chinese-Llama-2-7b) by LinkSoul, [Llama-2-7b-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat) by Meta,
 this demo is governed by the original [license](https://huggingface.co/spaces/huggingface-projects/llama-2-7b-chat/blob/main/LICENSE.txt) and [acceptable use policy](https://huggingface.co/spaces/huggingface-projects/llama-2-7b-chat/blob/main/USE_POLICY.md).
 """
 
