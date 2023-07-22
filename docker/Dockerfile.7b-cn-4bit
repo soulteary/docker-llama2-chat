@@ -1,0 +1,5 @@
+FROM soulteary/llama2:base
+
+COPY llama2-7b-cn-4bit/* ./
+
+CMD ["python", "app.py"]
