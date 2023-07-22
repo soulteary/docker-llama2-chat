@@ -16,7 +16,7 @@ DEFAULT_MAX_NEW_TOKENS = 1024
 DESCRIPTION = """
 # Llama-2 7B Chat (Chinese)
 
-本空间是对于 [Chinese-Llama-2-7b](https://huggingface.co/LinkSoul/Chinese-Llama-2-7b) 模型的演示。该模型由 LinkSoul 开发，基于 Llama 2 基础模型和自行收集的大规模中英文指令数据集 [instruction_merge_set](https://huggingface.co/datasets/LinkSoul/instruction_merge_set) 训练得到。
+本空间是对于 [Chinese-Llama-2-7b-4bit](https://huggingface.co/soulteary/Chinese-Llama-2-7b-4bit) 模型的演示。该模型由 LinkSoul 开发，基于 Llama 2 基础模型和自行收集的大规模中英文指令数据集 [instruction_merge_set](https://huggingface.co/datasets/LinkSoul/instruction_merge_set) 训练得到。
 
 """
 
