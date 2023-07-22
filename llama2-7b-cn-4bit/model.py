@@ -9,6 +9,7 @@ model_id = 'soulteary/Chinese-Llama-2-7b-4bit'
 if torch.cuda.is_available():
     model = AutoModelForCausalLM.from_pretrained(
         model_id,
+        load_in_4bit=True,
         local_files_only=True,
         torch_dtype=torch.float16,
         device_map='auto'
