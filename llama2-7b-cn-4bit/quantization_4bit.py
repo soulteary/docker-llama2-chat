@@ -18,7 +18,7 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 
 import os
-output = "/app/soulteary/Chinese-Llama-2-7b-4bit"
+output = "soulteary/Chinese-Llama-2-7b-4bit"
 if not os.path.exists(output):
     os.mkdir(output)
 
