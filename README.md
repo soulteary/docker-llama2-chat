@@ -1,33 +1,60 @@
-# Docker LLaMA2 Chat
+# Docker LLaMA2 Chat / 羊驼二代
 
-![](.github/llama2.jpg)
+<p style="text-align: center;">
+  <a href="README.md">ENGLISH</a> | <a href="README_CN.md"  target="_blank">中文文档</a>
+</p>
+
+[![](https://img.shields.io/badge/LLaMA2-Official_7B_/_13B-blue)](https://huggingface.co/meta-llama) [![](https://img.shields.io/badge/LLaMA2-Chines_7B-blue)](https://huggingface.co/soulteary/Chinese-Llama-2-7b-4bit) [![](https://img.shields.io/badge/License-Apache_v2-blue)](https://github.com/soulteary/docker-llama2-chat/blob/main/LICENSE)
+
+<img src=".github/llama2.jpg" width="40%">
 
 Play! Together! **ONLY 3 STEPS!**
 
 Get started quickly, locally using the 7B or 13B models, using Docker.
 
-This project has been tested by 4090 and costs 8 ~ 14G vRAM.
+- Meta Llama2, tested by 4090, and costs 8~14GB vRAM.
+- Chinese Llama2 quantified, tested by 4090, and costs 5GB vRAM.
 
 ## Usage
 
-1. Build LLaMA2 Docker image for 7B or 13B:
+1. Build LLaMA2 Docker image for 7B / 13B (official), 7B or 7B INT4 (chinese):
 
 ```bash
-# 7b
+# 7B
 bash scripts/make-7b.sh
-# 13b
+
+# OR 13B
 bash scripts/make-13b.sh
+
+# OR 7B Chinese
+bash scripts/make-7b-cn.sh
+
+# OR 7B Chinese 4bit
+bash scripts/make-7b-cn-4bit.sh
 ```
 
-2. Download LLaMA2 Offcial Models from HuggingFace (download faster++)
+2. Download LLaMA2 Models from HuggingFace, or chinese models.
 
 ```bash
-git clone git@hf.co:meta-llama/Llama-2-7b-chat-hf
-git clone git@hf.co:meta-llama/Llama-2-13b-chat-hf
+# MetaAI LLaMA2 Models (10~14GB vRAM)
+git clone https://huggingface.co/meta-llama/Llama-2-7b-chat-hf
+git clone https://huggingface.co/meta-llama/Llama-2-13b-chat-hf
 
 mkdir meta-llama
 mv Llama-2-7b-chat-hf meta-llama/
 mv Llama-2-13b-chat-hf meta-llama/
+
+# OR Chinese LLaMA2 (10~14GB vRAM)
+git clone https://huggingface.co/LinkSoul/Chinese-Llama-2-7b
+
+mkdir LinkSoul
+mv Chinese-Llama-2-7b LinkSoul/
+
+# OR Chinese LLaMA2 4BIT (5GB vRAM)
+git clone https://huggingface.co/soulteary/Chinese-Llama-2-7b-4bit
+
+mkdir soulteary
+mv Chinese-Llama-2-7b-4bit soulteary/
 ```
 
 keep the correct directory structure.
@@ -73,17 +100,19 @@ meta-llama
     ├── tokenizer.json
     ├── tokenizer.model
     └── USE_POLICY.md
-
-4 directories, 35 files
 ```
 
-3. Run llama2 7b or 13b in docker command:
+3. Run Llama2 model in docker command:
 
 ```bash
-# 7b
+# 7B
 bash scripts/run-7b.sh
-# or 13b
+# OR 13B
 bash scripts/run-13b.sh
+# Chinese 7B
+bash scripts/run-7b-cn.sh
+# Chinese 7B 4BIT
+bash scripts/run-7b-cn-4bit.sh
 ```
 
 enjoy, open `http://localhost7860` or `http://ip:7860` and play with the LLaMA2!
@@ -93,9 +122,12 @@ enjoy, open `http://localhost7860` or `http://ip:7860` and play with the LLaMA2!
 
 ![](.github/preview.png)
 
+![](.github/llama2-cn-4bit.jpg)
+
 ![](.github/clip.gif)
 
 ## Credit
 
-1. Meta LLaMA2: https://ai.meta.com/llama/
-2. Meta LLaMA2 7B/13B Chat: https://huggingface.co/meta-llama/Llama-2-7b-chat , https://huggingface.co/meta-llama/Llama-2-7b-chat
+- Meta AI LLaMA2: https://ai.meta.com/llama/
+- Meta LLaMA2 7B Chat: https://huggingface.co/meta-llama/Llama-2-7b-chat
+- Meta LLaMA2 13B Chat: https://huggingface.co/meta-llama/Llama-2-13b-chat
