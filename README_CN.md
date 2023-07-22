@@ -16,6 +16,16 @@
 - 中文 Llama2 模型，使用 4090 验证，需要 8~14GB 显存
 - 量化后的中文 Llama2 模型，使用 4090 验证，需要 5GB 显存
 
+你可以参考项目代码，举一反三，把模型跑起来，接入到你想玩的地方。
+
+## 预览图
+
+![](.github/preview.png)
+
+![](.github/llama2-cn-4bit.jpg)
+
+![](.github/clip.gif)
+
 ## 使用方法
 
 1. 一条命令，从项目中构建官方版（7B或13B）模型镜像，或中文版镜像（7B或INT4量化版）：
@@ -121,14 +131,6 @@ bash scripts/run-7b-cn-4bit.sh
 ```
 
 模型运行之后，在浏览器中访问 `http://localhost7860` 或者 `http://你的IP地址:7860` 就可以开始玩了。
-
-## 预览图
-
-![](.github/preview.png)
-
-![](.github/llama2-cn-4bit.jpg)
-
-![](.github/clip.gif)
 
 ## 博客教程
 

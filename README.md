@@ -15,6 +15,14 @@ Get started quickly, locally using the 7B or 13B models, using Docker.
 - Meta Llama2, tested by 4090, and costs 8~14GB vRAM.
 - Chinese Llama2 quantified, tested by 4090, and costs 5GB vRAM.
 
+## Preview
+
+![](.github/preview.png)
+
+![](.github/llama2-cn-4bit.jpg)
+
+![](.github/clip.gif)
+
 ## Usage
 
 1. Build LLaMA2 Docker image for 7B / 13B (official), 7B or 7B INT4 (chinese):
@@ -122,13 +130,6 @@ bash scripts/run-7b-cn-4bit.sh
 enjoy, open `http://localhost7860` or `http://ip:7860` and play with the LLaMA2!
 
 
-## Preview
-
-![](.github/preview.png)
-
-![](.github/llama2-cn-4bit.jpg)
-
-![](.github/clip.gif)
 
 ## Blogs
 
