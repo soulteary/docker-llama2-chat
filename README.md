@@ -61,6 +61,10 @@ keep the correct directory structure.
 
 ```bash
 tree -L 2 meta-llama
+soulteary
+└── ...
+LinkSoul
+└── ...
 meta-llama
 ├── Llama-2-13b-chat-hf
 │   ├── added_tokens.json
@@ -109,9 +113,9 @@ meta-llama
 bash scripts/run-7b.sh
 # OR 13B
 bash scripts/run-13b.sh
-# Chinese 7B
+# OR Chinese 7B
 bash scripts/run-7b-cn.sh
-# Chinese 7B 4BIT
+# OR Chinese 7B 4BIT
 bash scripts/run-7b-cn-4bit.sh
 ```
 
@@ -126,8 +130,15 @@ enjoy, open `http://localhost7860` or `http://ip:7860` and play with the LLaMA2!
 
 ![](.github/clip.gif)
 
+## Blogs
+
+- [Use Docker to quickly get started with the official version of Llama2 Open-source Large Model](https://soulteary.com/2023/07/21/use-docker-to-quickly-get-started-with-the-official-version-of-llama2-open-source-large-model.html)
+- [Use Docker to quickly get started with the chinese version of Llama2 Open-source Large Model](https://soulteary.com/2023/07/21/use-docker-to-quickly-get-started-with-the-chinese-version-of-llama2-open-source-large-model.html)
+- [Quantizing MetaAI Llama2 chinese version large models using Transformers](https://soulteary.com/2023/07/22/quantizing-meta-ai-llama2-chinese-version-large-models-using-transformers.html)
+
 ## Credit
 
-- Meta AI LLaMA2: https://ai.meta.com/llama/
+- MetaAI LLaMA2: https://ai.meta.com/llama/ ❤️
 - Meta LLaMA2 7B Chat: https://huggingface.co/meta-llama/Llama-2-7b-chat
 - Meta LLaMA2 13B Chat: https://huggingface.co/meta-llama/Llama-2-13b-chat
+- Chinese LLaMA2 7b: https://huggingface.co/LinkSoul/Chinese-Llama-2-7b
