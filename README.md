@@ -4,7 +4,7 @@
   <a href="README.md">ENGLISH</a> | <a href="README_CN.md"  target="_blank">中文文档</a>
 </p>
 
-[![](https://img.shields.io/badge/LLaMA2-Official_7B_/_13B-blue)](https://huggingface.co/meta-llama) [![](https://img.shields.io/badge/LLaMA2-Chines_7B-blue)](https://huggingface.co/soulteary/Chinese-Llama-2-7b-4bit) [![](https://img.shields.io/badge/License-Apache_v2-blue)](https://github.com/soulteary/docker-llama2-chat/blob/main/LICENSE)
+[![](https://img.shields.io/badge/LLaMA2-Official_7B_/_13B-blue)](https://huggingface.co/meta-llama) [![](https://img.shields.io/badge/LLaMA2-Chinese_7B-blue)](https://huggingface.co/soulteary/Chinese-Llama-2-7b-4bit) [![](https://img.shields.io/badge/LLaMA2-Chinese_GGMLQ4-blue)](https://huggingface.co/soulteary/Chinese-Llama-2-7b-ggml-q4) [![](https://img.shields.io/badge/License-Apache_v2-blue)](https://github.com/soulteary/docker-llama2-chat/blob/main/LICENSE)
 
 <img src=".github/llama2.jpg" width="40%">
 
@@ -14,6 +14,7 @@ Get started quickly, locally using the 7B or 13B models, using Docker.
 
 - Meta Llama2, tested by 4090, and costs 8~14GB vRAM.
 - Chinese Llama2 quantified, tested by 4090, and costs 5GB vRAM.
+- Use GGML(LLaMA.cpp), just use CPU play it.
 
 ## Preview
 
@@ -22,6 +23,15 @@ Get started quickly, locally using the 7B or 13B models, using Docker.
 ![](.github/llama2-cn-4bit.jpg)
 
 ![](.github/clip.gif)
+
+
+## Blogs
+
+- [Use Docker to quickly get started with the official version of Llama2 Open-source Large Model](https://soulteary.com/2023/07/21/use-docker-to-quickly-get-started-with-the-official-version-of-llama2-open-source-large-model.html)
+- [Use Docker to quickly get started with the chinese version of Llama2 Open-source Large Model](https://soulteary.com/2023/07/21/use-docker-to-quickly-get-started-with-the-chinese-version-of-llama2-open-source-large-model.html)
+- [Quantizing MetaAI Llama2 chinese version large models using Transformers](https://soulteary.com/2023/07/22/quantizing-meta-ai-llama2-chinese-version-large-models-using-transformers.html)
+- [Build Llama2 chinese large model that can run on CPU](https://soulteary.com/2023/07/23/build-llama2-chinese-large-model-that-can-run-on-cpu.html)
+
 
 ## Usage
 
@@ -129,13 +139,6 @@ bash scripts/run-7b-cn-4bit.sh
 
 enjoy, open `http://localhost7860` or `http://ip:7860` and play with the LLaMA2!
 
-
-
-## Blogs
-
-- [Use Docker to quickly get started with the official version of Llama2 Open-source Large Model](https://soulteary.com/2023/07/21/use-docker-to-quickly-get-started-with-the-official-version-of-llama2-open-source-large-model.html)
-- [Use Docker to quickly get started with the chinese version of Llama2 Open-source Large Model](https://soulteary.com/2023/07/21/use-docker-to-quickly-get-started-with-the-chinese-version-of-llama2-open-source-large-model.html)
-- [Quantizing MetaAI Llama2 chinese version large models using Transformers](https://soulteary.com/2023/07/22/quantizing-meta-ai-llama2-chinese-version-large-models-using-transformers.html)
 
 ## Credit
 
