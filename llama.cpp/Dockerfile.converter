@@ -17,4 +17,5 @@ RUN make -j$(nproc)
 
 FROM python:3.11.4-slim-bullseye as runtime
 RUN pip3 install numpy==1.24 sentencepiece==0.1.98
-COPY --from=base /app/llama.cpp/main /app/llama.cpp/main
+COPY --from=base /app/llama.cpp/ /app/llama.cpp/
+WORKDIR /app/llama.cpp/
