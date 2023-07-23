@@ -1,0 +1,22 @@
+FROM alpine:3.18 as code
+RUN apk add --no-cache wget
+WORKDIR /app
+ARG CODE_BASE=d2a4366
+ENV ENV_CODE_BASE=${CODE_BASE}
+RUN wget https://github.com/ggerganov/llama.cpp/archive/refs/tags/master-${ENV_CODE_BASE}.tar.gz && \
+    tar zxvf master-${ENV_CODE_BASE}.tar.gz && \
+    rm -rf master-${ENV_CODE_BASE}.tar.gz
+RUN mv llama.cpp-master-${ENV_CODE_BASE} llama.cpp
+
+FROM python:3.11.4-slim-bullseye as base
+COPY --from=code /app/llama.cpp /app/llama.cpp
+WORKDIR /app/llama.cpp
+ENV DEBIAN_FRONTEND="noninteractive"
+RUN apt-get update && apt-get install -y --no-install-recommends build-essential && rm -rf /var/lib/apt/lists/*
+RUN make -j$(nproc)
+
+FROM ubuntu:22.04 as runtime
+COPY --from=base /app/llama.cpp/LICENSE /app/llama.cpp/LICENSE
+COPY --from=base /app/llama.cpp/main /app/llama.cpp/main
+COPY --from=base /app/llama.cpp/prompts /app/llama.cpp/prompts
+WORKDIR /app/llama.cpp/
