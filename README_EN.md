@@ -145,6 +145,6 @@ enjoy, open `http://localhost7860` or `http://ip:7860` and play with the LLaMA2!
 - MetaAI LLaMA2: https://ai.meta.com/llama/ ❤️
 - Meta LLaMA2 7B Chat: https://huggingface.co/meta-llama/Llama-2-7b-chat
 - Meta LLaMA2 13B Chat: https://huggingface.co/meta-llama/Llama-2-13b-chat
-- Chinese LLaMA2 7b: https://huggingface.co/LinkSoul/Chinese-Llama-2-7b
+- Chinese LLaMA2 7B: https://huggingface.co/LinkSoul/Chinese-Llama-2-7b ❤️
+- Chinese LLaMA2 7B GGML q4: https://huggingface.co/soulteary/Chinese-Llama-2-7b-ggml-q4
 - LLaMA2 GGML Converter: https://hub.docker.com/r/soulteary/llama2
-
