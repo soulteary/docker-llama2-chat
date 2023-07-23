@@ -1,25 +1,22 @@
 # Docker LLaMA2 Chat / 羊驼二代
 
 <p style="text-align: center;">
-  <a href="README_CN.md"  target="_blank">中文文档</a> | <a href="README.md">ENGLISH</a>
+  <a href="README_EN.md">ENGLISH</a> | <a href="README.md"  target="_blank">中文文档</a>
 </p>
 
 [![](https://img.shields.io/badge/LLaMA2-Official_7B_/_13B-blue)](https://huggingface.co/meta-llama) [![](https://img.shields.io/badge/LLaMA2-Chinese_7B-blue)](https://huggingface.co/soulteary/Chinese-Llama-2-7b-4bit) [![](https://img.shields.io/badge/LLaMA2-Chinese_GGMLQ4-blue)](https://huggingface.co/soulteary/Chinese-Llama-2-7b-ggml-q4) [![](https://img.shields.io/badge/License-Apache_v2-blue)](https://github.com/soulteary/docker-llama2-chat/blob/main/LICENSE)
 
 <img src=".github/llama2.jpg" width="40%">
 
-三步上手 LLaMA2，一起玩！完整整博客教程已更新，欢迎“一键三连”。
+Play! Together! **ONLY 3 STEPS!**
 
-使用 Docker 快速上手，本地部署 7B 或 13B 官方模型，或者 7B 中文模型。
+Get started quickly, locally using the 7B or 13B models, using Docker.
 
-- Meta Llama2 模型， 使用 4090 验证，需要 8~14GB 显存
-- 中文 Llama2 模型，使用 4090 验证，需要 8~14GB 显存
-- 量化后的中文 Llama2 模型，使用 4090 验证，需要 5GB 显存
-- 使用 GGML (llama.cpp) 模型，只需要 CPU 就能够运行模型
+- Meta Llama2, tested by 4090, and costs 8~14GB vRAM.
+- Chinese Llama2 quantified, tested by 4090, and costs 5GB vRAM.
+- Use GGML(LLaMA.cpp), just use CPU play it.
 
-你可以参考项目代码，举一反三，把模型跑起来，接入到你想玩的地方。
-
-## 预览图
+## Preview
 
 ![](.github/preview.png)
 
@@ -27,33 +24,34 @@
 
 ![](.github/clip.gif)
 
-## 博客教程
 
-- [使用 Docker 快速上手官方版 LLaMA2 开源大模型](https://soulteary.com/2023/07/21/use-docker-to-quickly-get-started-with-the-official-version-of-llama2-open-source-large-model.html)
-- [使用 Docker 快速上手中文版 LLaMA2 开源大模型](https://soulteary.com/2023/07/21/use-docker-to-quickly-get-started-with-the-chinese-version-of-llama2-open-source-large-model.html)
-- [使用 Transformers 量化 Meta AI LLaMA2 中文版大模型](https://soulteary.com/2023/07/22/quantizing-meta-ai-llama2-chinese-version-large-models-using-transformers.html)
-- [构建能够使用 CPU 运行的 MetaAI LLaMA2 中文大模型](https://soulteary.com/2023/07/23/build-llama2-chinese-large-model-that-can-run-on-cpu.html)
+## Blogs
+
+- [Use Docker to quickly get started with the official version of Llama2 Open-source Large Model](https://soulteary.com/2023/07/21/use-docker-to-quickly-get-started-with-the-official-version-of-llama2-open-source-large-model.html)
+- [Use Docker to quickly get started with the chinese version of Llama2 Open-source Large Model](https://soulteary.com/2023/07/21/use-docker-to-quickly-get-started-with-the-chinese-version-of-llama2-open-source-large-model.html)
+- [Quantizing MetaAI Llama2 chinese version large models using Transformers](https://soulteary.com/2023/07/22/quantizing-meta-ai-llama2-chinese-version-large-models-using-transformers.html)
+- [Build Llama2 chinese large model that can run on CPU](https://soulteary.com/2023/07/23/build-llama2-chinese-large-model-that-can-run-on-cpu.html)
 
 
-## 使用方法
+## Usage
 
-1. 一条命令，从项目中构建官方版（7B或13B）模型镜像，或中文版镜像（7B或INT4量化版）：
+1. Build LLaMA2 Docker image for 7B / 13B (official), 7B or 7B INT4 (chinese):
 
 ```bash
 # 7B
 bash scripts/make-7b.sh
 
-# 或 13B
+# OR 13B
 bash scripts/make-13b.sh
 
-# 或 7B Chinese
+# OR 7B Chinese
 bash scripts/make-7b-cn.sh
 
-# 或 7B Chinese 4bit
+# OR 7B Chinese 4bit
 bash scripts/make-7b-cn-4bit.sh
 ```
 
-2. 选择适合你的命令，从 HuggingFace 下载 LLaMA2 或中文模型：
+2. Download LLaMA2 Models from HuggingFace, or chinese models.
 
 ```bash
 # MetaAI LLaMA2 Models (10~14GB vRAM)
@@ -64,20 +62,20 @@ mkdir meta-llama
 mv Llama-2-7b-chat-hf meta-llama/
 mv Llama-2-13b-chat-hf meta-llama/
 
-# 或 Chinese LLaMA2 (10~14GB vRAM)
+# OR Chinese LLaMA2 (10~14GB vRAM)
 git clone https://huggingface.co/LinkSoul/Chinese-Llama-2-7b
 
 mkdir LinkSoul
 mv Chinese-Llama-2-7b LinkSoul/
 
-# 或 Chinese LLaMA2 4BIT (5GB vRAM)
+# OR Chinese LLaMA2 4BIT (5GB vRAM)
 git clone https://huggingface.co/soulteary/Chinese-Llama-2-7b-4bit
 
 mkdir soulteary
 mv Chinese-Llama-2-7b-4bit soulteary/
 ```
 
-将下载好的模型，保持在一个正确的目录结构中。
+keep the correct directory structure.
 
 ```bash
 tree -L 2 meta-llama
@@ -126,25 +124,27 @@ meta-llama
     └── USE_POLICY.md
 ```
 
-3. 选择使用下面的适合你的命令，一键运行 LLaMA2 模型应用：
+3. Run Llama2 model in docker command:
 
 ```bash
 # 7B
 bash scripts/run-7b.sh
-# 或 13B
+# OR 13B
 bash scripts/run-13b.sh
-# 或 Chinese 7B
+# OR Chinese 7B
 bash scripts/run-7b-cn.sh
-# 或 Chinese 7B 4BIT
+# OR Chinese 7B 4BIT
 bash scripts/run-7b-cn-4bit.sh
 ```
 
-模型运行之后，在浏览器中访问 `http://localhost7860` 或者 `http://你的IP地址:7860` 就可以开始玩了。
+enjoy, open `http://localhost7860` or `http://ip:7860` and play with the LLaMA2!
 
-## 相关项目
+
+## Credit
 
 - MetaAI LLaMA2: https://ai.meta.com/llama/ ❤️
 - Meta LLaMA2 7B Chat: https://huggingface.co/meta-llama/Llama-2-7b-chat
 - Meta LLaMA2 13B Chat: https://huggingface.co/meta-llama/Llama-2-13b-chat
 - Chinese LLaMA2 7b: https://huggingface.co/LinkSoul/Chinese-Llama-2-7b
 - LLaMA2 GGML Converter: https://hub.docker.com/r/soulteary/llama2
+
