@@ -12,10 +12,15 @@
 
 > 使用 Docker 快速上手，本地部署 7B 或 13B 官方模型，或者 7B 中文模型。
 
-- Meta Llama2 模型， 使用 4090 验证，需要 8~14GB 显存
-- 中文 Llama2 模型，使用 4090 验证，需要 8~14GB 显存
-- 量化后的中文 Llama2 模型，使用 4090 验证，需要 5GB 显存
-- 使用 GGML (llama.cpp) 模型，只需要 CPU 就能够运行模型
+### 博客教程
+
+| 类型 | 显存需求 | 特点 | 教程地址 | 教程时间 |
+| --- | --- | --- | --- | --- |
+| 官方版（英文） | 8~14GB | 原汁原味 | [使用 Docker 快速上手官方版 LLaMA2 开源大模型](https://soulteary.com/2023/07/21/use-docker-to-quickly-get-started-with-the-official-version-of-llama2-open-source-large-model.html) | 2023.07.21 |
+| LinkSoul 中文版（双语）| 8~14GB | 支持中文 | [使用 Docker 快速上手中文版 LLaMA2 开源大模型](https://soulteary.com/2023/07/21/use-docker-to-quickly-get-started-with-the-chinese-version-of-llama2-open-source-large-model.html) | 2023.07.21 |
+| Transformers 量化（中文/官方） | 5GB | 加速推理、节约显存 | [使用 Transformers 量化 Meta AI LLaMA2 中文版大模型](https://soulteary.com/2023/07/22/quantizing-meta-ai-llama2-chinese-version-large-models-using-transformers.html) | 2023.07.22 |
+| GGML (Llama.cpp) 量化 （中文/官方）| 可以不需要显存 | CPU 推理 | [构建能够使用 CPU 运行的 MetaAI LLaMA2 中文大模型](https://soulteary.com/2023/07/23/build-llama2-chinese-large-model-that-can-run-on-cpu.html) | 2023.07.23 |
+
 
 你可以参考项目代码，举一反三，把模型跑起来，接入到你想玩的地方，包括并不局限于支持 LLaMA 1代的各种开源软件中。
 
@@ -26,14 +31,6 @@
 ![](.github/llama2-cn-4bit.jpg)
 
 ![](.github/clip.gif)
-
-## 博客教程
-
-- [使用 Docker 快速上手官方版 LLaMA2 开源大模型](https://soulteary.com/2023/07/21/use-docker-to-quickly-get-started-with-the-official-version-of-llama2-open-source-large-model.html)
-- [使用 Docker 快速上手中文版 LLaMA2 开源大模型](https://soulteary.com/2023/07/21/use-docker-to-quickly-get-started-with-the-chinese-version-of-llama2-open-source-large-model.html)
-- [使用 Transformers 量化 Meta AI LLaMA2 中文版大模型](https://soulteary.com/2023/07/22/quantizing-meta-ai-llama2-chinese-version-large-models-using-transformers.html)
-- [构建能够使用 CPU 运行的 MetaAI LLaMA2 中文大模型](https://soulteary.com/2023/07/23/build-llama2-chinese-large-model-that-can-run-on-cpu.html)
-
 
 ## 使用方法
 
