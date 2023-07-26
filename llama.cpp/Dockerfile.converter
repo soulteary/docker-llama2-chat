@@ -1,7 +1,7 @@
 FROM alpine:3.18 as code
 RUN apk add --no-cache wget
 WORKDIR /app
-ARG CODE_BASE=d2a4366
+ARG CODE_BASE=eb542d3
 ENV ENV_CODE_BASE=${CODE_BASE}
 RUN wget https://github.com/ggerganov/llama.cpp/archive/refs/tags/master-${ENV_CODE_BASE}.tar.gz && \
     tar zxvf master-${ENV_CODE_BASE}.tar.gz && \
