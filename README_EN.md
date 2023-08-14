@@ -39,16 +39,16 @@ Get started quickly, locally using the 7B or 13B models, using Docker.
 
 ```bash
 # 7B
-bash scripts/make-7b.sh
+bash run.sh 7b
 
-# OR 13B
-bash scripts/make-13b.sh
+# 13B
+bash run.sh 13b
 
-# OR 7B Chinese
-bash scripts/make-7b-cn.sh
+# 7B Chinese
+bash run.sh 7b-cn
 
-# OR 7B Chinese 4bit
-bash scripts/make-7b-cn-4bit.sh
+# 7B Chinese 4bit
+bash run.sh 7b-cn-4bit
 ```
 
 2. Download LLaMA2 Models from HuggingFace, or chinese models.
@@ -128,13 +128,13 @@ meta-llama
 
 ```bash
 # 7B
-bash scripts/run-7b.sh
-# OR 13B
-bash scripts/run-13b.sh
-# OR Chinese 7B
-bash scripts/run-7b-cn.sh
-# OR Chinese 7B 4BIT
-bash scripts/run-7b-cn-4bit.sh
+bash run.sh 7b
+# 13B
+bash run.sh 13b
+# Chinese 7B
+bash run.sh 7b-cn
+# Chinese 7B 4BIT
+bash run.sh 7b-cn-4bit
 ```
 
 enjoy, open `http://localhost7860` or `http://ip:7860` and play with the LLaMA2!
