@@ -38,16 +38,16 @@
 
 ```bash
 # 7B
-bash scripts/make-7b.sh
+bash run.sh 7b
 
-# 或 13B
-bash scripts/make-13b.sh
+# 13B
+bash run.sh 13b
 
-# 或 7B Chinese
-bash scripts/make-7b-cn.sh
+# 7B Chinese
+bash run.sh 7b-cn
 
-# 或 7B Chinese 4bit
-bash scripts/make-7b-cn-4bit.sh
+# 7B Chinese 4bit
+bash run.sh 7b-cn-4bit
 ```
 
 2. 选择适合你的命令，从 HuggingFace 下载 LLaMA2 或中文模型：
@@ -127,13 +127,13 @@ meta-llama
 
 ```bash
 # 7B
-bash scripts/run-7b.sh
-# 或 13B
-bash scripts/run-13b.sh
-# 或 Chinese 7B
-bash scripts/run-7b-cn.sh
-# 或 Chinese 7B 4BIT
-bash scripts/run-7b-cn-4bit.sh
+bash run.sh 7b
+# 13B
+bash run.sh 13b
+# Chinese 7B
+bash run.sh 7b-cn
+# Chinese 7B 4BIT
+bash run.sh 7b-cn-4bit
 ```
 
 模型运行之后，在浏览器中访问 `http://localhost7860` 或者 `http://你的IP地址:7860` 就可以开始玩了。

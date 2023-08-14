@@ -56,6 +56,6 @@ else
 fi
 
 docker run --gpus all --rm -it --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 \
-    -p 7861:7860 \
+    -p 7860:7860 \
     -v "$me_path/$mod_path":"/app/$mod_path" \
     "${image_name}:${tag_name}"
